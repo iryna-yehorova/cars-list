@@ -9,7 +9,6 @@
         </v-btn>
 
         <v-overlay
-			absolute="absolute"
 			:dark="false"
 			:value="showModal"
 			opacity="0.5"
@@ -123,6 +122,7 @@ export default {
 
 			this.newCar.id = Date.now()
 			this.$emit('add', this.newCar);
+			this.newCar = {}
 			this.showModal = false
 		}
 	}
