@@ -10,7 +10,7 @@
 						<p>Car title:</p>
 						<v-text-field
 							v-model="carInfo.title"
-							class=""
+							data-test="input-title"
 							clearable
 							dense
 							solo
@@ -21,6 +21,7 @@
 
 					<v-col 
 						class="pb-0 d-flex flex-row-reverse align-start" 
+						data-test="delete-button"
 						:style="{cursor: 'pointer'}"
 						@click="$emit('delete', carInfo)"
 					>
@@ -83,7 +84,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>
