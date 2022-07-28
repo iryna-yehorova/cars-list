@@ -14,7 +14,11 @@
 		</v-expansion-panel-header>
 		<v-expansion-panel-content>
 			<div v-for="car in item.value" :key="car.id" class="d-flex flex-column">
-				<CarCard :value="car" @input="updateCar"/>
+				<CarCard 
+					:value="car" 
+					@input="updateCar" 
+					@delete="deleteCar"
+				/>
 			</div>
 		</v-expansion-panel-content>
 		</v-expansion-panel>
@@ -42,14 +46,14 @@ export default {
 					title: 'Old van', 
 					description: 'Good car', 
 					response: '',
-					type: 'van'
+					type: 'Van'
 				},
 				{
 					id: 125431, 
 					title: 'Old track', 
 					description: 'Good car', 
 					response: '',
-					type: 'track'
+					type: 'Track'
 				},
 			],
 		}
@@ -57,10 +61,10 @@ export default {
 
 	computed: {
 		tracks() {
-			return this.datalist.filter(item => item.type === 'track')
+			return this.datalist.filter(item => item.type === 'Track')
 		},
 		vans() {
-			return this.datalist.filter(item => item.type === 'van')
+			return this.datalist.filter(item => item.type === 'Van')
 		},
 		carOptions() {
 			return [
@@ -80,6 +84,13 @@ export default {
 
 		addNewCar(newCar) {
 			this.datalist.push(newCar)
+		},
+
+		deleteCar(car) {
+			const index = this.datalist.findIndex((item) => 
+			{item.id == car.id})
+
+			this.datalist.splice(index, 1)
 		}
 	}
 }

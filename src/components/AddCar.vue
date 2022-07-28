@@ -44,7 +44,6 @@
 									dense
 									solo
 									label="Car title"
-									@input="$emit('input', carInfo)"
 								/>
 							</v-col>
 						</v-row>
@@ -58,7 +57,6 @@
 									dense
 									solo
 									label="Car description"
-									@input="$emit('input', carInfo)"
 								/>
 							</v-col>
 						</v-row>
@@ -72,7 +70,6 @@
 									dense
 									solo
 									label="Risk response"
-									@input="$emit('input', carInfo)"
 								/>
 							</v-col>
 						</v-row>

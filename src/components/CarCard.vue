@@ -6,11 +6,7 @@
 		<v-form>
 			<v-container>
 				<v-row>
-					<v-col
-						cols="12"
-						sm="6"
-						class="pb-0"
-					>
+					<v-col class="pb-0">
 						<p>Car title:</p>
 						<v-text-field
 							v-model="carInfo.title"
@@ -21,6 +17,14 @@
 							label="Car title"
 							@input="$emit('input', carInfo)"
 						/>
+					</v-col>
+
+					<v-col 
+						class="pb-0 d-flex flex-row-reverse align-start" 
+						:style="{cursor: 'pointer'}"
+						@click="$emit('delete', carInfo)"
+					>
+						<v-icon>mdi-delete-forever-outline</v-icon>
 					</v-col>
 				</v-row>
 
